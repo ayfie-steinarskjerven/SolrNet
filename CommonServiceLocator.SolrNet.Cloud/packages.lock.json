@@ -342,22 +342,22 @@
           "System.Net.NameResolution": "4.3.0"
         }
       },
-      "SolrNet": {
+      "Ayfie.SolrNet": {
         "type": "Project",
         "dependencies": {
-          "CommonServiceLocator": "[2.0.4, )",
-          "SolrNet.Core": "[1.0.20, )"
+          "Ayfie.SolrNet.Core": "[1.1.3, )",
+          "CommonServiceLocator": "[2.0.4, )"
         }
       },
-      "SolrNet.Cloud.Core": {
+      "Ayfie.SolrNet.Cloud.Core": {
         "type": "Project",
         "dependencies": {
+          "Ayfie.SolrNet.Core": "[1.1.3, )",
           "Newtonsoft.Json": "[13.0.3, )",
-          "SolrNet.Core": "[1.0.20, )",
           "ZooKeeperNetEx": "[3.4.12.1, )"
         }
       },
-      "SolrNet.Core": {
+      "Ayfie.SolrNet.Core": {
         "type": "Project",
         "dependencies": {
           "Newtonsoft.Json": "[13.0.3, )",
@@ -673,22 +673,22 @@
           "System.Net.NameResolution": "4.3.0"
         }
       },
-      "SolrNet": {
+      "Ayfie.SolrNet": {
         "type": "Project",
         "dependencies": {
-          "CommonServiceLocator": "[2.0.4, )",
-          "SolrNet.Core": "[1.0.20, )"
+          "Ayfie.SolrNet.Core": "[1.1.3, )",
+          "CommonServiceLocator": "[2.0.4, )"
         }
       },
-      "SolrNet.Cloud.Core": {
+      "Ayfie.SolrNet.Cloud.Core": {
         "type": "Project",
         "dependencies": {
+          "Ayfie.SolrNet.Core": "[1.1.3, )",
           "Newtonsoft.Json": "[13.0.3, )",
-          "SolrNet.Core": "[1.0.20, )",
           "ZooKeeperNetEx": "[3.4.12.1, )"
         }
       },
-      "SolrNet.Core": {
+      "Ayfie.SolrNet.Core": {
         "type": "Project",
         "dependencies": {
           "Newtonsoft.Json": "[13.0.3, )"

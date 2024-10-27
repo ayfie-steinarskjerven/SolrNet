@@ -165,5 +165,10 @@ namespace SolrNet.Mapping
         {
             return mappings.Select(k => k.Key).ToList();
         }
+
+        IDictionary<string, PropertyInfo> IReadOnlyMappingManager.GetDocuments(Type type)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

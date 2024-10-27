@@ -6,7 +6,7 @@
     <Product>SolrNet.Cloud.Core</Product>
     <Description>SolrNet.Cloud is a .NET Open Source client for Apache SolrCloud. This version of SolrNet.Cloud is compatible with Solr 1.x to Solr 7.x.
 This is the SolrNet.Cloud.Core package, and should be used in combination with any of our easy to use Dependency Injection SolrNet.Cloud integration libraries.</Description>
-    <PackageId>SolrNet.Cloud.Core</PackageId>
+    <PackageId>Ayfie.SolrNet.Cloud.Core</PackageId>
     <IsPackable>true</IsPackable>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)'=='Release|netstandard2.0'">

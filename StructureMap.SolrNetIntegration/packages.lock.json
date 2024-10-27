@@ -40,7 +40,7 @@
         "resolved": "4.4.0",
         "contentHash": "BahUww/+mdP4ARCAh2RQhQTg13wYLVrBb9SYVgW8ZlrwjraGCXHGjo0oIiUfZ34LUZkMMR+RAzR7dEY4S1HeQQ=="
       },
-      "SolrNet.Core": {
+      "Ayfie.SolrNet.Core": {
         "type": "Project",
         "dependencies": {
           "Newtonsoft.Json": "[13.0.3, )",
@@ -336,7 +336,7 @@
           "System.Runtime": "4.3.0"
         }
       },
-      "SolrNet.Core": {
+      "Ayfie.SolrNet.Core": {
         "type": "Project",
         "dependencies": {
           "Newtonsoft.Json": "[13.0.3, )"

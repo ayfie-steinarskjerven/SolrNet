@@ -56,6 +56,17 @@ namespace SolrNet.Mapping {
         }
 
         /// <inheritdoc />
+        public IDictionary<string, PropertyInfo> GetDocuments(Type type)
+        {
+            var propsAttrs = GetPropertiesWithAttribute<SolrDocumentAttribute>(type);
+
+            var documents = propsAttrs
+                .Select(kv => new KeyValuePair<string, PropertyInfo>(kv.Key.Name, kv.Key));
+
+            return documents.ToDictionary(kv => kv.Key, kv => kv.Value);
+        }
+
+        /// <inheritdoc />
         public SolrFieldModel GetUniqueKey(Type type) {
             var propsAttrs = GetPropertiesWithAttribute<SolrUniqueKeyAttribute>(type);
 	        var fields = propsAttrs.Select(

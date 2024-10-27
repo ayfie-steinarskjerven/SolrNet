@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Reflection;
+
 using Moroco;
 
 namespace SolrNet.Tests.Mocks {
@@ -18,6 +20,11 @@ namespace SolrNet.Tests.Mocks {
 
         public ICollection<Type> GetRegisteredTypes() {
             return getRegisteredTypes.Invoke();
+        }
+
+        IDictionary<string, PropertyInfo> IReadOnlyMappingManager.GetDocuments(Type type)
+        {
+            throw new NotImplementedException();
         }
     }
 }

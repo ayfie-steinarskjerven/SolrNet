@@ -16,6 +16,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Reflection;
 
 namespace SolrNet {
     /// <summary>
@@ -41,5 +42,11 @@ namespace SolrNet {
         /// </summary>
         /// <returns></returns>
         ICollection<Type> GetRegisteredTypes();
+
+        /// <summary>
+        /// Gets documents mapped for this type
+        /// </summary>
+        /// <returns></returns>
+        IDictionary<string, PropertyInfo> GetDocuments(Type type);
     }
 }

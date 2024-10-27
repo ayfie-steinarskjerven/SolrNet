@@ -1467,60 +1467,60 @@
           "System.Net.NameResolution": "4.3.0"
         }
       },
-      "SolrNet": {
+      "Ayfie.SolrNet": {
         "type": "Project",
         "dependencies": {
-          "CommonServiceLocator": "[2.0.4, )",
-          "SolrNet.Core": "[1.0.20, )"
+          "Ayfie.SolrNet.Core": "[1.1.3, )",
+          "CommonServiceLocator": "[2.0.4, )"
         }
       },
-      "SolrNet.Cloud": {
+      "Ayfie.SolrNet.Cloud": {
         "type": "Project",
         "dependencies": {
-          "CommonServiceLocator": "[2.0.4, )",
-          "SolrNet": "[1.0.20, )",
-          "SolrNet.Cloud.Core": "[1.0.20, )",
-          "SolrNet.Core": "[1.0.20, )"
+          "Ayfie.SolrNet": "[1.1.3, )",
+          "Ayfie.SolrNet.Cloud.Core": "[1.1.3, )",
+          "Ayfie.SolrNet.Core": "[1.1.3, )",
+          "CommonServiceLocator": "[2.0.4, )"
         }
       },
-      "SolrNet.Cloud.Core": {
+      "Ayfie.SolrNet.Cloud.Core": {
         "type": "Project",
         "dependencies": {
+          "Ayfie.SolrNet.Core": "[1.1.3, )",
           "Newtonsoft.Json": "[13.0.3, )",
-          "SolrNet.Core": "[1.0.20, )",
           "ZooKeeperNetEx": "[3.4.12.1, )"
         }
       },
-      "SolrNet.Cloud.Unity": {
-        "type": "Project",
-        "dependencies": {
-          "Nito.AsyncEx": "[4.0.1, )",
-          "SolrNet.Cloud.Core": "[1.0.20, )",
-          "SolrNet.Core": "[1.0.20, )",
-          "Unity": "[5.0.0, )",
-          "ZooKeeperNetEx": "[3.4.12.1, )"
-        }
-      },
-      "SolrNet.Core": {
+      "Ayfie.SolrNet.Core": {
         "type": "Project",
         "dependencies": {
           "Newtonsoft.Json": "[13.0.3, )"
         }
       },
+      "SolrNet.Cloud.Unity": {
+        "type": "Project",
+        "dependencies": {
+          "Ayfie.SolrNet.Cloud.Core": "[1.1.3, )",
+          "Ayfie.SolrNet.Core": "[1.1.3, )",
+          "Nito.AsyncEx": "[4.0.1, )",
+          "Unity": "[5.0.0, )",
+          "ZooKeeperNetEx": "[3.4.12.1, )"
+        }
+      },
       "SolrNet.LightInject": {
         "type": "Project",
         "dependencies": {
-          "LightInject": "[4.1.1, )",
-          "SolrNet.Core": "[1.0.20, )"
+          "Ayfie.SolrNet.Core": "[1.1.3, )",
+          "LightInject": "[4.1.1, )"
         }
       },
       "solrnet.tests.common": {
         "type": "Project",
         "dependencies": {
+          "Ayfie.SolrNet.Core": "[1.1.3, )",
           "Castle.Core": "[4.2.1, )",
           "Castle.Windsor": "[4.1.0, )",
           "CommonServiceLocator": "[2.0.4, )",
-          "SolrNet.Core": "[1.0.20, )",
           "Testcontainers": "[3.5.0, )",
           "xunit.assert": "[2.4.1, )"
         }

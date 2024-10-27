@@ -3,7 +3,7 @@
     <TargetFrameworks>netstandard2.0;net46</TargetFrameworks>
     <AssemblyName>CommonServiceLocator.SolrNet</AssemblyName>
     <RootNamespace>CommonServiceLocator.SolrNet</RootNamespace>
-    <PackageId>SolrNet</PackageId>
+    <PackageId>Ayfie.SolrNet</PackageId>
     <IsPackable>true</IsPackable>
     <Authors>Mauricio Scheffer and contributors</Authors>
     <Company />

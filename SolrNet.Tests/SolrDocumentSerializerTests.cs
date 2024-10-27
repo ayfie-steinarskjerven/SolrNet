@@ -276,6 +276,32 @@ namespace SolrNet.Tests
             string fs = ser.Serialize(testDoc, null).ToString(SaveOptions.DisableFormatting);
             Assert.Equal(@"<doc><field name=""location"">12.2,-12.3</field></doc>", fs);
         }
+        
+        [Fact]
+        public void SerializeSolrDocument() {
+            var mapper = new AttributesMappingManager();
+            var serializer = new SolrDocumentSerializer<ParentTestDoc>(mapper, new DefaultFieldSerializer());
+            var testDoc = new ParentTestDoc 
+            { 
+                Id = "1",
+                NestedDocuments = new List<NestedTestDoc> 
+                { 
+                    new NestedTestDoc 
+                    {
+                        Id = "1!1",
+                        NestedField = "test",
+                    },
+                    new NestedTestDoc
+                    {
+                        Id = "1!2",
+                        NestedField = "test"
+                    }
+                }
+            };
+
+            string fs = serializer.Serialize(testDoc, null).ToString(SaveOptions.DisableFormatting);
+            Assert.Equal(@"<doc><field name=""Id"">1</field><doc><field name=""Id"">1!1</field><field name=""NestedField"">test</field></doc><doc><field name=""Id"">1!2</field><field name=""NestedField"">test</field></doc></doc>", fs);
+        }
 
     }
 }

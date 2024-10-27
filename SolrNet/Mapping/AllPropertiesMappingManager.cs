@@ -62,5 +62,10 @@ namespace SolrNet.Mapping {
             var t = property.ReflectedType;
             uniqueKeys[t] = property;
         }
+
+        IDictionary<string, PropertyInfo> IReadOnlyMappingManager.GetDocuments(Type type)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

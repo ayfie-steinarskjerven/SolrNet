@@ -1216,7 +1216,7 @@
           "System.Xml.ReaderWriter": "4.3.0"
         }
       },
-      "SolrNet.Core": {
+      "Ayfie.SolrNet.Core": {
         "type": "Project",
         "dependencies": {
           "Newtonsoft.Json": "[13.0.3, )"

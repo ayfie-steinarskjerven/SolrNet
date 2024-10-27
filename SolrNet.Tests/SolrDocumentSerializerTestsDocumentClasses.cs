@@ -114,5 +114,23 @@ namespace SolrNet.Tests {
             [SolrField]
             public int Id { get; set; }
         }
+
+        public class ParentTestDoc
+        {
+            [SolrField]
+            public string Id { get; set; }
+
+            [SolrDocument]
+            public List<NestedTestDoc> NestedDocuments { get; set; }
+        }
+
+        public class NestedTestDoc
+        {
+            [SolrField]
+            public string Id { get; set; }
+
+            [SolrField]
+            public string NestedField { get; set; }
+        }
     }
 }

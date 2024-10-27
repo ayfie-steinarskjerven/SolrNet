@@ -325,7 +325,7 @@
           "System.Runtime": "4.1.0"
         }
       },
-      "SolrNet.Core": {
+      "Ayfie.SolrNet.Core": {
         "type": "Project",
         "dependencies": {
           "Newtonsoft.Json": "[13.0.3, )"

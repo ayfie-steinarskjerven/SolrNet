@@ -16,6 +16,10 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
+
+using SolrNet.Attributes;
 using SolrNet.Utils;
 
 namespace SolrNet.Mapping {
@@ -25,6 +29,7 @@ namespace SolrNet.Mapping {
     public class MemoizingMappingManager : IReadOnlyMappingManager {
         private readonly Converter<Type, IDictionary<string,SolrFieldModel>> memoGetFields;
         private readonly Converter<Type, SolrFieldModel> memoGetUniqueKey;
+        private readonly Converter<Type, IDictionary<string, PropertyInfo>> memoGetDocuments;
         private readonly IReadOnlyMappingManager mapper;
         private ICollection<Type> registeredTypes;
         private readonly object registeredTypesLock = new object();
@@ -32,6 +37,7 @@ namespace SolrNet.Mapping {
         public MemoizingMappingManager(IReadOnlyMappingManager mapper) {
             memoGetFields = Memoizer.Memoize<Type, IDictionary<string,SolrFieldModel>>(mapper.GetFields);
             memoGetUniqueKey = Memoizer.Memoize<Type, SolrFieldModel>(mapper.GetUniqueKey);
+            memoGetDocuments = Memoizer.Memoize<Type, IDictionary<string, PropertyInfo>>(GetDocumentsInternal);
             this.mapper = mapper;
         }
 
@@ -50,12 +56,29 @@ namespace SolrNet.Mapping {
         }
 
         /// <inheritdoc />
-        public ICollection<Type> GetRegisteredTypes() {
-            lock (registeredTypesLock) {
+        public ICollection<Type> GetRegisteredTypes()
+        {
+            lock (registeredTypesLock)
+            {
                 if (registeredTypes == null)
                     registeredTypes = mapper.GetRegisteredTypes();
                 return new List<Type>(registeredTypes);
             }
+        }
+
+        IDictionary<string, PropertyInfo> IReadOnlyMappingManager.GetDocuments(Type type)
+        {
+            return memoGetDocuments(type);
+        }
+
+        private IDictionary<string, PropertyInfo> GetDocumentsInternal(Type type)
+        {
+            var properties = type.GetProperties(BindingFlags.Instance | BindingFlags.Public);
+            var documentProperties = properties
+                .Where(p => p.GetCustomAttribute<SolrDocumentAttribute>() != null)
+                .ToDictionary(p => p.Name, p => p);
+
+            return documentProperties;
         }
     }
 }
